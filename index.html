@@ -1,73 +1,1497 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <!-- ================= BASIC SETTINGS ================= -->
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VSquare | 0 Digital Stress</title>
+    <title>V² Digital Agency | 0 Digital Stress</title>
 
-    <link rel="stylesheet" href="style.css">
+
+    <!-- ================= TAILWIND CSS ================= -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ================= FONT AWESOME ================= -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+
+    <!-- ================= CONNECT YOUR CSS ================= -->
+
+    <link rel="stylesheet" href="style.css"> 
+
 </head>
 
-<body>
 
-    <div class="app">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-        <!-- HEADER -->
-        <header class="header">
 
-            <div class="brand">
-                <div class="logo">V²</div>
+    <!-- =====================================================
+                            HEADER
+    ====================================================== -->
+
+    <header
+        class="sticky top-0 z-50 bg-white/90
+        backdrop-blur-md border-b border-slate-100"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+            h-20 flex items-center justify-between"
+        >
+
+
+            <!-- LOGO -->
+
+            <a href="#home" class="flex items-center gap-3 group">
+
+                <div
+                    class="bg-blue-600 text-white
+                    font-extrabold rounded-xl
+                    w-10 h-10 flex items-center
+                    justify-center text-lg
+                    shadow-md shadow-blue-500/20
+                    group-hover:bg-blue-700
+                    transition-colors"
+                >
+                    V²
+                </div>
+
 
                 <div>
-                    <h2>VSquare</h2>
-                    <span>0 Digital Stress</span>
+
+                    <span
+                        class="font-extrabold text-lg
+                        text-slate-900 tracking-tight
+                        block leading-tight"
+                    >
+                        V² Digital Agency
+                    </span>
+
+                    <span
+                        class="text-[10px] text-slate-400
+                        font-bold uppercase tracking-wider block"
+                    >
+                        0 DIGITAL STRESS
+                    </span>
+
                 </div>
-            </div>
 
-            <div class="online">
-                <span></span> Online
-            </div>
-
-        </header>
+            </a>
 
 
-        <!-- CHAT -->
-        <main class="chat" id="chat">
 
-            <div class="message bot">
-                👋 Hey! I'm the <b>VSquare Digital Assistant.</b>
-                <br><br>
-                Tell me what's creating digital stress for you.
-                <br><br>
-                You can simply type something like:
-                <br>
-                <i>"I have a business but I can't manage Instagram and WhatsApp."</i>
-            </div>
+            <!-- DESKTOP NAVIGATION -->
 
-        </main>
-
-
-        <!-- INPUT -->
-        <div class="input-area">
-
-            <input
-                type="text"
-                id="userInput"
-                placeholder="Tell me your digital problem..."
-                autocomplete="off"
+            <nav
+                class="hidden md:flex items-center gap-8
+                font-medium text-slate-600 text-sm"
             >
 
-            <button onclick="sendMessage()">
-                ➤
+                <a
+                    href="#home"
+                    class="hover:text-blue-600 transition-colors"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="#demo"
+                    class="hover:text-blue-600 transition-colors"
+                >
+                    Demo
+                </a>
+
+                <a
+                    href="#services"
+                    class="hover:text-blue-600 transition-colors"
+                >
+                    Services
+                </a>
+
+                <a
+                    href="#packages"
+                    class="hover:text-blue-600 transition-colors"
+                >
+                    Packages
+                </a>
+
+                <a
+                    href="#how-it-works"
+                    class="hover:text-blue-600 transition-colors"
+                >
+                    How It Works
+                </a>
+
+                <a
+                    href="#about"
+                    class="hover:text-blue-600 transition-colors"
+                >
+                    About
+                </a>
+
+                <a
+                    href="#contact"
+                    class="hover:text-blue-600 transition-colors"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+
+            <!-- DESKTOP BUTTONS -->
+
+            <div class="hidden sm:flex items-center gap-3">
+
+                <button
+                    class="px-5 py-2.5 rounded-full
+                    border border-slate-200
+                    text-slate-700 text-sm
+                    font-semibold hover:bg-slate-100
+                    transition-all"
+                >
+                    Client Login
+                </button>
+
+
+                <button
+                    class="px-5 py-2.5 rounded-full
+                    bg-blue-600 hover:bg-blue-700
+                    text-white text-sm font-semibold
+                    shadow-md shadow-blue-500/20
+                    transition-all"
+                >
+                    Get Started
+                </button>
+
+            </div>
+
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                id="menu-btn"
+                class="md:hidden p-2 text-slate-600
+                hover:text-blue-600"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars text-xl"></i>
+
             </button>
 
         </div>
 
-    </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <div
+            id="mobile-menu"
+            class="hidden md:hidden
+            bg-white border-b border-slate-100
+            px-6 py-4 space-y-3"
+        >
+
+            <a
+                href="#home"
+                class="block font-medium
+                text-slate-600 hover:text-blue-600"
+            >
+                Home
+            </a>
+
+            <a
+                href="#demo"
+                class="block font-medium
+                text-slate-600 hover:text-blue-600"
+            >
+                Demo
+            </a>
+
+            <a
+                href="#services"
+                class="block font-medium
+                text-slate-600 hover:text-blue-600"
+            >
+                Services
+            </a>
+
+            <a
+                href="#packages"
+                class="block font-medium
+                text-slate-600 hover:text-blue-600"
+            >
+                Packages
+            </a>
+
+            <a
+                href="#how-it-works"
+                class="block font-medium
+                text-slate-600 hover:text-blue-600"
+            >
+                How It Works
+            </a>
+
+            <a
+                href="#about"
+                class="block font-medium
+                text-slate-600 hover:text-blue-600"
+            >
+                About
+            </a>
+
+            <a
+                href="#contact"
+                class="block font-medium
+                text-slate-600 hover:text-blue-600"
+            >
+                Contact
+            </a>
+
+
+            <div
+                class="pt-4 border-t border-slate-100
+                flex flex-col gap-2"
+            >
+
+                <button
+                    class="w-full py-2.5 rounded-full
+                    border border-slate-200
+                    text-slate-700 text-sm
+                    font-semibold"
+                >
+                    Client Login
+                </button>
+
+
+                <button
+                    class="w-full py-2.5 rounded-full
+                    bg-blue-600 text-white
+                    text-sm font-semibold"
+                >
+                    Get Started
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+                         HERO SECTION
+    ====================================================== -->
+
+    <section
+        id="home"
+        class="max-w-7xl mx-auto
+        px-4 sm:px-6 lg:px-8
+        pt-12 lg:pt-20 pb-16
+        grid grid-cols-1 lg:grid-cols-12
+        gap-12 items-center"
+    >
+
+
+        <!-- HERO LEFT -->
+
+        <div class="lg:col-span-6 space-y-6">
+
+
+            <!-- SMALL BADGE -->
+
+            <div
+                class="inline-flex items-center gap-2
+                bg-blue-50 text-blue-600
+                px-4 py-1.5 rounded-full
+                text-xs font-bold tracking-wide
+                border border-blue-100"
+            >
+
+                <span
+                    class="w-2 h-2 rounded-full
+                    bg-blue-600 animate-pulse"
+                ></span>
+
+                Zero Complexity, Total Execution.
+
+            </div>
+
+
+
+            <!-- MAIN HEADING -->
+
+            <h1
+                class="text-4xl sm:text-5xl lg:text-6xl
+                font-extrabold text-slate-900
+                leading-[1.15] tracking-tight"
+            >
+
+                Your Digital Problems.
+
+                <span class="text-blue-600">
+                    Solved.
+                </span>
+
+            </h1>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+                class="text-slate-600 text-base
+                sm:text-lg leading-relaxed"
+            >
+                From websites and social media to WhatsApp
+                management and job applications, V² handles
+                the digital work so you don't have to.
+                Experience digital agency support with
+                0 digital stress.
+            </p>
+
+
+
+            <!-- BUTTONS -->
+
+            <div
+                class="flex flex-wrap
+                items-center gap-4 pt-2"
+            >
+
+                <a
+                    href="#packages"
+                    class="px-7 py-3.5
+                    bg-blue-600 hover:bg-blue-700
+                    text-white font-bold text-sm
+                    rounded-xl shadow-lg
+                    shadow-blue-500/25"
+                >
+                    Get Started Now
+                </a>
+
+
+                <a
+                    href="#services"
+                    class="px-7 py-3.5
+                    bg-blue-50 hover:bg-blue-100
+                    text-blue-600 font-bold
+                    text-sm rounded-xl"
+                >
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                       DASHBOARD PREVIEW
+        ================================================== -->
+
+        <div class="lg:col-span-6">
+
+            <div
+                class="bg-white rounded-3xl p-5 sm:p-6
+                shadow-xl border border-slate-100"
+            >
+
+
+                <!-- BROWSER TOP -->
+
+                <div
+                    class="flex items-center
+                    justify-between pb-4
+                    border-b border-slate-100 mb-5"
+                >
+
+                    <div class="flex space-x-2">
+
+                        <span
+                            class="w-3 h-3 rounded-full
+                            bg-rose-400"
+                        ></span>
+
+                        <span
+                            class="w-3 h-3 rounded-full
+                            bg-amber-400"
+                        ></span>
+
+                        <span
+                            class="w-3 h-3 rounded-full
+                            bg-emerald-400"
+                        ></span>
+
+                    </div>
+
+
+                    <div
+                        class="bg-slate-100
+                        px-4 py-1 rounded-md
+                        text-xs font-mono
+                        text-slate-500"
+                    >
+                        v2digital.agency/dashboard
+                    </div>
+
+                </div>
+
+
+
+                <!-- DASHBOARD -->
+
+                <div
+                    class="grid grid-cols-12
+                    gap-4 sm:gap-6"
+                >
+
+
+                    <!-- SIDEBAR -->
+
+                    <div
+                        class="col-span-4
+                        border-r border-slate-100
+                        pr-3 sm:pr-4 space-y-4"
+                    >
+
+                        <h2
+                            class="font-bold
+                            text-slate-900
+                            text-xs sm:text-sm"
+                        >
+                            My V² Hub
+                        </h2>
+
+
+                        <ul
+                            class="space-y-3
+                            text-[11px] sm:text-xs
+                            font-semibold
+                            text-slate-500"
+                        >
+
+                            <li
+                                class="text-blue-600
+                                border-l-2
+                                border-blue-600 pl-2"
+                            >
+                                Active Tasks
+                            </li>
+
+                            <li class="pl-2">
+                                Team Assigned
+                            </li>
+
+                            <li class="pl-2">
+                                Reels Drafts
+                            </li>
+
+                            <li class="pl-2">
+                                Invoices
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- DASHBOARD RIGHT -->
+
+                    <div
+                        class="col-span-8
+                        space-y-4"
+                    >
+
+
+                        <!-- STATUS CARDS -->
+
+                        <div
+                            class="grid grid-cols-2
+                            gap-2 sm:gap-3"
+                        >
+
+                            <div
+                                class="bg-slate-50
+                                p-3 rounded-xl"
+                            >
+
+                                <span
+                                    class="text-[10px]
+                                    text-slate-400
+                                    font-bold block
+                                    uppercase"
+                                >
+                                    Current Support
+                                </span>
+
+                                <span
+                                    class="text-xs
+                                    sm:text-sm
+                                    font-bold
+                                    text-slate-800"
+                                >
+                                    Active 24/7
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="bg-emerald-50
+                                p-3 rounded-xl
+                                border border-emerald-100"
+                            >
+
+                                <span
+                                    class="text-[10px]
+                                    text-emerald-600
+                                    font-bold block
+                                    uppercase"
+                                >
+                                    Digital Stress Level
+                                </span>
+
+                                <span
+                                    class="text-xs
+                                    sm:text-sm
+                                    font-bold
+                                    text-emerald-700"
+                                >
+                                    0% Stress
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EXECUTION PIPELINE -->
+
+                        <div
+                            class="bg-slate-50
+                            p-3 sm:p-4
+                            rounded-xl space-y-3"
+                        >
+
+                            <span
+                                class="text-xs font-bold
+                                text-slate-700 block"
+                            >
+                                Live Execution Pipeline
+                            </span>
+
+
+                            <div
+                                class="flex items-center
+                                justify-between
+                                bg-white p-2.5
+                                rounded-lg text-xs
+                                shadow-sm
+                                border border-slate-100"
+                            >
+
+                                <span
+                                    class="font-medium
+                                    text-slate-700
+                                    text-[11px]
+                                    sm:text-xs"
+                                >
+                                    Insta Reels Draft Creation
+                                </span>
+
+
+                                <span
+                                    class="bg-blue-100
+                                    text-blue-600
+                                    text-[10px]
+                                    font-bold px-2
+                                    py-0.5 rounded"
+                                >
+                                    In Progress
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="flex items-center
+                                justify-between
+                                bg-white p-2.5
+                                rounded-lg text-xs
+                                shadow-sm
+                                border border-slate-100"
+                            >
+
+                                <span
+                                    class="font-medium
+                                    text-slate-700
+                                    text-[11px]
+                                    sm:text-xs"
+                                >
+                                    WhatsApp API Campaign Setup
+                                </span>
+
+
+                                <span
+                                    class="bg-emerald-100
+                                    text-emerald-600
+                                    text-[10px]
+                                    font-bold px-2
+                                    py-0.5 rounded"
+                                >
+                                    Delivered
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                         HIGHLIGHTS
+    ====================================================== -->
+
+    <section
+        class="max-w-7xl mx-auto
+        px-4 sm:px-6 lg:px-8 py-6"
+    >
+
+        <div
+            class="grid grid-cols-1
+            sm:grid-cols-2 md:grid-cols-4
+            gap-4"
+        >
+
+
+            <!-- CARD 1 -->
+
+            <div
+                class="bg-white p-5 rounded-2xl
+                border border-slate-100
+                shadow-sm flex items-center
+                space-x-4"
+            >
+
+                <div
+                    class="p-3 bg-blue-50
+                    text-blue-600 rounded-xl"
+                >
+                    <i class="fa-solid fa-layer-group text-xl"></i>
+                </div>
+
+                <div>
+
+                    <p
+                        class="text-xs
+                        text-slate-400
+                        font-medium"
+                    >
+                        Task Coverage
+                    </p>
+
+                    <p
+                        class="font-bold
+                        text-slate-800 text-sm"
+                    >
+                        100+ Digital Tasks
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div
+                class="bg-white p-5 rounded-2xl
+                border border-slate-100
+                shadow-sm flex items-center
+                space-x-4"
+            >
+
+                <div
+                    class="p-3 bg-blue-50
+                    text-blue-600 rounded-xl"
+                >
+                    <i class="fa-regular fa-clock text-xl"></i>
+                </div>
+
+                <div>
+
+                    <p
+                        class="text-xs
+                        text-slate-400
+                        font-medium"
+                    >
+                        Instant Help
+                    </p>
+
+                    <p
+                        class="font-bold
+                        text-slate-800 text-sm"
+                    >
+                        24/7 Live Support
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div
+                class="bg-white p-5 rounded-2xl
+                border border-slate-100
+                shadow-sm flex items-center
+                space-x-4"
+            >
+
+                <div
+                    class="p-3 bg-blue-50
+                    text-blue-600 rounded-xl"
+                >
+                    <i class="fa-regular fa-credit-card text-xl"></i>
+                </div>
+
+                <div>
+
+                    <p
+                        class="text-xs
+                        text-slate-400
+                        font-medium"
+                    >
+                        Zero Overpricing
+                    </p>
+
+                    <p
+                        class="font-bold
+                        text-slate-800 text-sm"
+                    >
+                        Affordable Plans
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 4 -->
+
+            <div
+                class="bg-white p-5 rounded-2xl
+                border border-slate-100
+                shadow-sm flex items-center
+                space-x-4"
+            >
+
+                <div
+                    class="p-3 bg-blue-50
+                    text-blue-600 rounded-xl"
+                >
+                    <i class="fa-solid fa-table-cells text-xl"></i>
+                </div>
+
+                <div>
+
+                    <p
+                        class="text-xs
+                        text-slate-400
+                        font-medium"
+                    >
+                        Live Tracking
+                    </p>
+
+                    <p
+                        class="font-bold
+                        text-slate-800 text-sm"
+                    >
+                        1 Simple Dashboard
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                          SERVICES
+    ====================================================== -->
+
+    <section
+        id="services"
+        class="max-w-7xl mx-auto
+        px-4 sm:px-6 lg:px-8
+        py-16 sm:py-20"
+    >
+
+
+        <!-- SECTION TITLE -->
+
+        <div
+            class="text-center max-w-2xl
+            mx-auto mb-12 sm:mb-16
+            space-y-3"
+        >
+
+            <span
+                class="bg-emerald-50
+                text-emerald-600
+                border border-emerald-100
+                px-3 py-1 rounded-full
+                text-xs font-bold
+                uppercase tracking-wider"
+            >
+                OUR SERVICES
+            </span>
+
+
+            <h2
+                class="text-3xl sm:text-4xl
+                font-extrabold
+                text-slate-900"
+            >
+                We do the work,
+                you take the credit
+            </h2>
+
+
+            <p
+                class="text-slate-500 text-sm"
+            >
+                Focus on scaling your life or business.
+                Let our team of specialists manage your
+                repetitive, complex, or tedious digital challenges.
+            </p>
+
+        </div>
+
+
+
+        <!-- SERVICES GRID -->
+
+        <div
+            class="grid grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-3 gap-6"
+        >
+
+
+            <!-- SERVICE 1 -->
+
+            <div
+                class="bg-white p-6 rounded-2xl
+                border border-slate-100
+                shadow-sm space-y-4
+                hover:shadow-md
+                transition-shadow"
+            >
+
+                <div
+                    class="flex justify-between
+                    items-start"
+                >
+
+                    <div
+                        class="p-3 bg-blue-50
+                        text-blue-600 rounded-xl"
+                    >
+                        <i class="fa-solid fa-video text-lg"></i>
+                    </div>
+
+
+                    <div class="text-right">
+
+                        <span
+                            class="text-[10px]
+                            text-slate-400
+                            block font-medium"
+                        >
+                            Starting from
+                        </span>
+
+                        <span
+                            class="text-lg
+                            font-extrabold
+                            text-blue-600"
+                        >
+                            ₹2,999
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3
+                    class="text-lg font-bold
+                    text-slate-900"
+                >
+                    Instagram Reels Management
+                </h3>
+
+
+                <p
+                    class="text-slate-500
+                    text-xs leading-relaxed"
+                >
+                    Complete video editing, scheduling,
+                    writing engaging copy, and trending
+                    audio sourcing.
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="inline-flex
+                    items-center
+                    text-xs font-bold
+                    text-blue-600"
+                >
+                    Learn More
+
+                    <i
+                        class="fa-solid
+                        fa-arrow-right
+                        ml-2 text-[10px]"
+                    ></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICE 2 -->
+
+            <div
+                class="bg-white p-6 rounded-2xl
+                border border-slate-100
+                shadow-sm space-y-4
+                hover:shadow-md
+                transition-shadow"
+            >
+
+                <div
+                    class="flex justify-between
+                    items-start"
+                >
+
+                    <div
+                        class="p-3 bg-blue-50
+                        text-blue-600 rounded-xl"
+                    >
+                        <i class="fa-solid fa-comment-dots text-lg"></i>
+                    </div>
+
+
+                    <div class="text-right">
+
+                        <span
+                            class="text-[10px]
+                            text-slate-400
+                            block font-medium"
+                        >
+                            Starting from
+                        </span>
+
+                        <span
+                            class="text-lg
+                            font-extrabold
+                            text-blue-600"
+                        >
+                            ₹1,999
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3
+                    class="text-lg font-bold
+                    text-slate-900"
+                >
+                    WhatsApp Management
+                </h3>
+
+
+                <p
+                    class="text-slate-500
+                    text-xs leading-relaxed"
+                >
+                    Setting up autoresponders,
+                    customer queries redirection,
+                    bulk messaging pipelines.
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="inline-flex
+                    items-center
+                    text-xs font-bold
+                    text-blue-600"
+                >
+                    Learn More
+
+                    <i
+                        class="fa-solid
+                        fa-arrow-right
+                        ml-2 text-[10px]"
+                    ></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICE 3 -->
+
+            <div
+                class="bg-white p-6 rounded-2xl
+                border border-slate-100
+                shadow-sm space-y-4
+                hover:shadow-md
+                transition-shadow"
+            >
+
+                <div
+                    class="flex justify-between
+                    items-start"
+                >
+
+                    <div
+                        class="p-3 bg-blue-50
+                        text-blue-600 rounded-xl"
+                    >
+                        <i class="fa-solid fa-code text-lg"></i>
+                    </div>
+
+
+                    <div class="text-right">
+
+                        <span
+                            class="text-[10px]
+                            text-slate-400
+                            block font-medium"
+                        >
+                            Starting from
+                        </span>
+
+                        <span
+                            class="text-lg
+                            font-extrabold
+                            text-blue-600"
+                        >
+                            ₹4,999
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3
+                    class="text-lg font-bold
+                    text-slate-900"
+                >
+                    Website Development
+                </h3>
+
+
+                <p
+                    class="text-slate-500
+                    text-xs leading-relaxed"
+                >
+                    Stunning responsive designs,
+                    modern SaaS architectures,
+                    custom layouts optimized for speed.
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="inline-flex
+                    items-center
+                    text-xs font-bold
+                    text-blue-600"
+                >
+                    Learn More
+
+                    <i
+                        class="fa-solid
+                        fa-arrow-right
+                        ml-2 text-[10px]"
+                    ></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICE 4 -->
+
+            <div
+                class="bg-white p-6 rounded-2xl
+                border border-slate-100
+                shadow-sm space-y-4
+                hover:shadow-md
+                transition-shadow"
+            >
+
+                <div
+                    class="flex justify-between
+                    items-start"
+                >
+
+                    <div
+                        class="p-3 bg-blue-50
+                        text-blue-600 rounded-xl"
+                    >
+                        <i class="fa-brands fa-youtube text-lg"></i>
+                    </div>
+
+
+                    <div class="text-right">
+
+                        <span
+                            class="text-[10px]
+                            text-slate-400
+                            block font-medium"
+                        >
+                            Starting from
+                        </span>
+
+                        <span
+                            class="text-lg
+                            font-extrabold
+                            text-blue-600"
+                        >
+                            ₹3,999
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3
+                    class="text-lg font-bold
+                    text-slate-900"
+                >
+                    YouTube Shorts
+                </h3>
+
+
+                <p
+                    class="text-slate-500
+                    text-xs leading-relaxed"
+                >
+                    Grow organic reach with rapid
+                    editing, high-retention titles,
+                    and viral short form structures.
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="inline-flex
+                    items-center
+                    text-xs font-bold
+                    text-blue-600"
+                >
+                    Learn More
+
+                    <i
+                        class="fa-solid
+                        fa-arrow-right
+                        ml-2 text-[10px]"
+                    ></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICE 5 -->
+
+            <div
+                class="bg-white p-6 rounded-2xl
+                border border-slate-100
+                shadow-sm space-y-4
+                hover:shadow-md
+                transition-shadow"
+            >
+
+                <div
+                    class="flex justify-between
+                    items-start"
+                >
+
+                    <div
+                        class="p-3 bg-blue-50
+                        text-blue-600 rounded-xl"
+                    >
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </div>
+
+
+                    <div class="text-right">
+
+                        <span
+                            class="text-[10px]
+                            text-slate-400
+                            block font-medium"
+                        >
+                            Starting from
+                        </span>
+
+                        <span
+                            class="text-lg
+                            font-extrabold
+                            text-blue-600"
+                        >
+                            ₹2,999
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3
+                    class="text-lg font-bold
+                    text-slate-900"
+                >
+                    Job Search & Matching
+                </h3>
+
+
+                <p
+                    class="text-slate-500
+                    text-xs leading-relaxed"
+                >
+                    Hand-picked roles tailored to
+                    your exact profile across platforms
+                    like LinkedIn & Indeed.
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="inline-flex
+                    items-center
+                    text-xs font-bold
+                    text-blue-600"
+                >
+                    Learn More
+
+                    <i
+                        class="fa-solid
+                        fa-arrow-right
+                        ml-2 text-[10px]"
+                    ></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICE 6 -->
+
+            <div
+                class="bg-white p-6 rounded-2xl
+                border border-slate-100
+                shadow-sm space-y-4
+                hover:shadow-md
+                transition-shadow"
+            >
+
+                <div
+                    class="flex justify-between
+                    items-start"
+                >
+
+                    <div
+                        class="p-3 bg-blue-50
+                        text-blue-600 rounded-xl"
+                    >
+                        <i class="fa-solid fa-laptop-code text-lg"></i>
+                    </div>
+
+
+                    <div class="text-right">
+
+                        <span
+                            class="text-[10px]
+                            text-slate-400
+                            block font-medium"
+                        >
+                            Starting from
+                        </span>
+
+                        <span
+                            class="text-lg
+                            font-extrabold
+                            text-blue-600"
+                        >
+                            ₹5,999
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3
+                    class="text-lg font-bold
+                    text-slate-900"
+                >
+                    Digital Solutions
+                </h3>
+
+
+                <p
+                    class="text-slate-500
+                    text-xs leading-relaxed"
+                >
+                    Custom digital solutions designed
+                    to simplify your business and
+                    improve productivity.
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="inline-flex
+                    items-center
+                    text-xs font-bold
+                    text-blue-600"
+                >
+                    Learn More
+
+                    <i
+                        class="fa-solid
+                        fa-arrow-right
+                        ml-2 text-[10px]"
+                    ></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                            FOOTER
+    ====================================================== -->
+
+    <footer class="bg-slate-900 text-white py-10">
+
+        <div
+            class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8"
+        >
+
+            <div
+                class="flex flex-col
+                md:flex-row
+                justify-between
+                items-center gap-4"
+            >
+
+                <div>
+
+                    <h2 class="font-extrabold text-xl">
+                        V² Digital Agency
+                    </h2>
+
+                    <p class="text-slate-400 text-sm mt-1">
+                        0 Digital Stress
+                    </p>
+
+                </div>
+
+
+                <p class="text-slate-400 text-sm">
+                    © 2026 V² Digital Agency.
+                    All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+                    CONNECT JAVASCRIPT FILE
+    ====================================================== -->
 
     <script src="script.js"></script>
-    <p> "Zero Digital Stress" </p>
+
 
 </body>
+
 </html>
