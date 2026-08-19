@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: #f6f8fc;
+    color: #172033;
+    display: flex;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 235px;
+    min-height: 100vh;
+    background: #111c32;
+    color: white;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 45px;
+}
+
+.brand span {
+    background: #2463eb;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+nav a {
+    padding: 12px;
+    border-radius: 7px;
+    color: #aeb8ca;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+nav a.active,
+nav a:hover {
+    background: #1e3153;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.sidebar-bottom button {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #34445f;
+    background: transparent;
+    color: #aeb8ca;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    flex: 1;
+    padding: 40px 5%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.small {
+    color: #2463eb;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+header h1 {
+    font-size: 27px;
+    margin-bottom: 7px;
+}
+
+header p:not(.small) {
+    color: #788396;
+    font-size: 12px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #2463eb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile strong {
+    display: block;
+    font-size: 11px;
+}
+
+.profile small {
+    color: #8993a4;
+    font-size: 9px;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 23px;
+    border: 1px solid #e5ebf2;
+    border-radius: 10px;
+}
+
+.stat-card span {
+    font-size: 9px;
+    font-weight: 800;
+    color: #8993a4;
+}
+
+.stat-card h2 {
+    margin: 10px 0 5px;
+    font-size: 21px;
+}
+
+.stat-card p {
+    font-size: 10px;
+    color: #20ae91;
+}
+
+
+/* CONTENT */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+}
+
+.dashboard-card {
+    background: white;
+    border: 1px solid #e5ebf2;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.dashboard-card h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #edf1f5;
+}
+
+.service:last-child {
+    border-bottom: none;
+}
+
+.service strong {
+    font-size: 11px;
+}
+
+.service p {
+    color: #8993a4;
+    font-size: 9px;
+    margin-top: 5px;
+}
+
+.status {
+    background: #ddfaf3;
+    color: #13a589;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.dashboard-card > p {
+    color: #788396;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.support-btn {
+    background: #2463eb;
+    border: none;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 10px;
+    }
+
+    .brand {
+        justify-content: center;
+        font-size: 0;
+    }
+
+    .brand span {
+        font-size: 12px;
+    }
+
+    nav a {
+        font-size: 0;
+        text-align: center;
+    }
+
+    .dashboard {
+        padding: 25px 18px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .profile {
+        display: none;
+    }
+}
