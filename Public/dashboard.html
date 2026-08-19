@@ -22,7 +22,7 @@
     <aside class="sidebar">
 
         <div class="brand">
-            <span>V²</span>
+            <img src="assets/vsquare.png" alt="V² Digital Agency" class="dashboard-logo">
             Digital Agency
         </div>
 
@@ -112,7 +112,7 @@
                 <span>PLAN</span>
 
                 <h2>
-                    Growth
+                    <span id="selectedPlan">Your plan</span>
                 </h2>
 
                 <p>
@@ -127,11 +127,11 @@
                 <span>PAYMENT</span>
 
                 <h2>
-                    ₹12,999
+                    Checkout completed
                 </h2>
 
                 <p>
-                    Paid successfully
+                    Confirmation pending
                 </p>
 
             </div>
@@ -243,6 +243,11 @@
         </section>
 
     </main>
+
+    <script>
+        const service = new URLSearchParams(window.location.search).get("service");
+        document.getElementById("selectedPlan").textContent = service || "Your selected service";
+    </script>
 
 
 </body>

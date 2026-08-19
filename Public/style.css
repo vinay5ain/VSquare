@@ -591,6 +591,222 @@ footer {
     background: #f3f7ff;
 }
 
+.chat-payment-button {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    background: var(--blue);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.chat-payment-button:hover {
+    background: #1553d4;
+}
+
+.chat-offer-card {
+    margin: 4px 0 15px;
+    padding: 14px;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+    box-shadow: 0 5px 14px rgba(36, 99, 235, .09);
+}
+
+.chat-offer-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.chat-offer-heading strong {
+    color: var(--blue);
+    font-size: 19px;
+    line-height: 1;
+}
+
+.chat-offer-card h4 {
+    margin: 12px 0 6px;
+    color: #0f172a;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.chat-offer-card p {
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.chat-offer-card .chat-offer-benefits {
+    margin-top: 8px;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ================= SERVICE DETAILS ================= */
+
+.service-details-section {
+    scroll-margin-top: 6rem;
+    padding: 1rem 6% 5.5rem;
+    background: linear-gradient(180deg, #fff 0%, #f7fafd 100%);
+}
+
+.service-details-inner {
+    max-width: 1050px;
+    margin: auto;
+    padding: 2.25rem;
+    border: 1px solid #dbeafe;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 18px 45px rgba(36, 99, 235, .09);
+}
+
+.service-details-intro {
+    max-width: 650px;
+    text-align: center;
+    margin: 0 auto 2rem;
+}
+
+.service-details-badge {
+    display: inline-block;
+    margin-bottom: .7rem;
+    padding: .35rem .8rem;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: var(--blue);
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.service-details-intro h2 {
+    color: var(--dark);
+    font-size: clamp(1.7rem, 4vw, 2.35rem);
+    line-height: 1.15;
+    letter-spacing: -.04em;
+}
+
+.service-details-intro p {
+    margin-top: .75rem;
+    color: var(--muted);
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+.service-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.service-detail-card {
+    min-height: 13.5rem;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: #fff;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.service-detail-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(36, 99, 235, .1);
+}
+
+.service-detail-icon {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    margin-bottom: 1rem;
+    border-radius: .7rem;
+    background: #eff6ff;
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.service-detail-card h3 {
+    margin-bottom: .8rem;
+    color: var(--dark);
+    font-size: .95rem;
+}
+
+.service-detail-card p,
+.service-detail-card li,
+.service-detail-card span {
+    color: var(--muted);
+    font-size: .78rem;
+    line-height: 1.6;
+}
+
+.service-detail-card ul {
+    display: grid;
+    gap: .35rem;
+    padding-left: 1rem;
+}
+
+.service-detail-card li::marker {
+    color: var(--mint);
+}
+
+.service-detail-price {
+    background: linear-gradient(135deg, #eff6ff, #fff);
+}
+
+.service-detail-price strong {
+    display: block;
+    margin: .1rem 0 .4rem;
+    color: var(--blue);
+    font-size: 1.8rem;
+    letter-spacing: -.05em;
+}
+
+.service-details-cta {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: .65rem;
+    margin: 1.8rem auto 0;
+    padding: .85rem 1.25rem;
+    border-radius: .65rem;
+    background: var(--blue);
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(36, 99, 235, .22);
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+.service-details-cta:hover {
+    background: #1553d4;
+    transform: translateY(-2px);
+}
+
+[data-service-card].is-selected {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .12), 0 12px 25px rgba(36, 99, 235, .1);
+}
+
+@media (max-width: 800px) {
+    .service-details-grid { grid-template-columns: 1fr; }
+    .service-detail-card { min-height: auto; }
+}
+
+@media (max-width: 500px) {
+    .service-details-section { padding: .5rem 1rem 3.5rem; }
+    .service-details-inner { padding: 1.5rem 1rem; border-radius: 1.1rem; }
+}
+
 .chat-input {
     display: flex;
 
@@ -692,3 +908,10 @@ footer {
         bottom: 15px;
     }
 }
+
+/* Existing V² brand asset, kept responsive at every size. */
+.site-logo { width: 2.5rem; height: 2.5rem; object-fit: contain; border-radius: .75rem; }
+.footer-logo { width: 1.4rem; height: 1.4rem; object-fit: contain; border-radius: .3rem; }
+.chat-button-logo { width: 1.45rem; height: 1.45rem; object-fit: contain; border-radius: 50%; background: white; }
+.chat-brand { display: flex; align-items: center; gap: 9px; }
+.chat-logo { width: 2rem; height: 2rem; object-fit: contain; border-radius: 50%; background: white; }

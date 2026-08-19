@@ -284,3 +284,11 @@ header p:not(.small) {
         display: none;
     }
 }
+
+.dashboard-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 7px;
+    background: white;
+}

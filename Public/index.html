@@ -66,17 +66,7 @@
 
             <a href="#home" class="flex items-center gap-3 group">
 
-                <div
-                    class="bg-blue-600 text-white
-                    font-extrabold rounded-xl
-                    w-10 h-10 flex items-center
-                    justify-center text-lg
-                    shadow-md shadow-blue-500/20
-                    group-hover:bg-blue-700
-                    transition-colors"
-                >
-                    V²
-                </div>
+                <img src="assets/vsquare.png" alt="V² Digital Agency" class="site-logo">
 
 
                 <div>
@@ -930,6 +920,7 @@
             <!-- SERVICE 1 -->
 
             <div
+                data-service-card="reels"
                 class="bg-white p-6 rounded-2xl
                 border border-slate-100
                 shadow-sm space-y-4
@@ -992,7 +983,8 @@
 
 
                 <a
-                    href="#contact"
+                    href="#service-details"
+                    data-service-details="reels"
                     class="inline-flex
                     items-center
                     text-xs font-bold
@@ -1015,6 +1007,7 @@
             <!-- SERVICE 2 -->
 
             <div
+                data-service-card="whatsapp"
                 class="bg-white p-6 rounded-2xl
                 border border-slate-100
                 shadow-sm space-y-4
@@ -1077,7 +1070,8 @@
 
 
                 <a
-                    href="#contact"
+                    href="#service-details"
+                    data-service-details="whatsapp"
                     class="inline-flex
                     items-center
                     text-xs font-bold
@@ -1100,6 +1094,7 @@
             <!-- SERVICE 3 -->
 
             <div
+                data-service-card="website"
                 class="bg-white p-6 rounded-2xl
                 border border-slate-100
                 shadow-sm space-y-4
@@ -1162,7 +1157,8 @@
 
 
                 <a
-                    href="#contact"
+                    href="#service-details"
+                    data-service-details="website"
                     class="inline-flex
                     items-center
                     text-xs font-bold
@@ -1185,6 +1181,7 @@
             <!-- SERVICE 4 -->
 
             <div
+                data-service-card="youtube"
                 class="bg-white p-6 rounded-2xl
                 border border-slate-100
                 shadow-sm space-y-4
@@ -1247,7 +1244,8 @@
 
 
                 <a
-                    href="#contact"
+                    href="#service-details"
+                    data-service-details="youtube"
                     class="inline-flex
                     items-center
                     text-xs font-bold
@@ -1270,6 +1268,7 @@
             <!-- SERVICE 5 -->
 
             <div
+                data-service-card="jobs"
                 class="bg-white p-6 rounded-2xl
                 border border-slate-100
                 shadow-sm space-y-4
@@ -1332,7 +1331,8 @@
 
 
                 <a
-                    href="#contact"
+                    href="#service-details"
+                    data-service-details="jobs"
                     class="inline-flex
                     items-center
                     text-xs font-bold
@@ -1355,6 +1355,7 @@
             <!-- SERVICE 6 -->
 
             <div
+                data-service-card="solutions"
                 class="bg-white p-6 rounded-2xl
                 border border-slate-100
                 shadow-sm space-y-4
@@ -1417,7 +1418,8 @@
 
 
                 <a
-                    href="#contact"
+                    href="#service-details"
+                    data-service-details="solutions"
                     class="inline-flex
                     items-center
                     text-xs font-bold
@@ -1439,8 +1441,42 @@
 
     </section>
 
+    <!-- ================= SERVICE DETAILS ================= -->
+    <section id="service-details" class="service-details-section" hidden aria-live="polite">
+        <div class="service-details-inner">
+            <div class="service-details-intro">
+                <span class="service-details-badge">SERVICE DETAILS</span>
+                <h2 id="selected-service-name">Selected service</h2>
+                <p id="selected-service-description"></p>
+            </div>
+
+            <div class="service-details-grid">
+                <article class="service-detail-card">
+                    <span class="service-detail-icon">✓</span>
+                    <h3>What We Provide</h3>
+                    <ul id="selected-service-includes"></ul>
+                </article>
+
+                <article class="service-detail-card">
+                    <span class="service-detail-icon">⚡</span>
+                    <h3>Why Choose V²</h3>
+                    <p id="selected-service-value"></p>
+                </article>
+
+                <article class="service-detail-card service-detail-price">
+                    <span class="service-detail-icon">₹</span>
+                    <h3>Starting Price</h3>
+                    <strong id="selected-service-price"></strong>
+                    <span>Tailored to your needs</span>
+                </article>
+            </div>
+
+            <a href="#packages" class="service-details-cta">Get Started <span>→</span></a>
+        </div>
+    </section>
+
  <!-- ================= PRICING ================= -->
-    <section class="pricing-section">
+    <section id="packages" class="pricing-section">
 
         <div class="section-heading">
             <span class="badge">PRICING PLANS</span>
@@ -1473,7 +1509,7 @@
                     <li>✓ Basic digital assistance</li>
                 </ul>
 
-                <button class="outline-btn">Choose Starter</button>
+                <button class="outline-btn" data-plan="starter">Choose Starter</button>
             </div>
 
 
@@ -1503,7 +1539,7 @@
                     <li>✓ Monthly strategy planning</li>
                 </ul>
 
-                <button class="primary-btn">Choose Growth Plan</button>
+                <button class="primary-btn" data-plan="growth">Choose Growth Plan</button>
             </div>
 
 
@@ -1530,7 +1566,7 @@
                     <li>✓ Dedicated support</li>
                 </ul>
 
-                <button class="outline-btn">Choose Complete</button>
+                <button class="outline-btn" data-plan="complete">Choose Complete</button>
             </div>
 
         </div>
@@ -1629,7 +1665,7 @@
 
             <div class="footer-brand">
                 <h3>
-                    <span class="logo-box">V²</span>
+                    <img src="assets/vsquare.png" alt="V² Digital Agency" class="footer-logo">
                     Digital Agency
                 </h3>
 
@@ -1691,7 +1727,7 @@
     <!-- ================= CHATBOT ================= -->
 
     <button class="chat-button" id="chatButton">
-        <span>💬</span>
+        <img src="assets/vsquare.png" alt="" class="chat-button-logo">
         <b>V² Assist</b>
     </button>
 
@@ -1699,9 +1735,12 @@
     <div class="chat-window" id="chatWindow">
 
         <div class="chat-header">
-            <div>
-                <strong>V² Assist</strong>
-                <small>Digital support</small>
+            <div class="chat-brand">
+                <img src="assets/vsquare.png" alt="V² Digital Agency" class="chat-logo">
+                <div>
+                    <strong>V² Assist</strong>
+                    <small>Digital support</small>
+                </div>
             </div>
 
             <button id="closeChat">×</button>
@@ -1715,9 +1754,11 @@
             </div>
 
             <div class="quick-buttons">
-                <button>View pricing</button>
-                <button>Website help</button>
-                <button>Talk to us</button>
+                <button type="button">View Pricing</button>
+                <button type="button">Our Services</button>
+                <button type="button">Website Development</button>
+                <button type="button">WhatsApp Management</button>
+                <button type="button">Talk to Us</button>
             </div>
 
         </div>

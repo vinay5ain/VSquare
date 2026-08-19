@@ -4,12 +4,15 @@ const crypto = require("crypto");
 const path = require("path");
 require("dotenv").config();
 
+if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+    console.error("Missing RAZORPAY_KEY_ID or RAZORPAY_KEY_SECRET in environment variables.");
+    process.exit(1);
+}
+
 const app = express();
+const publicPath = path.join(__dirname, "Public");
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
-
-
 const razorpay = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET
@@ -36,6 +39,9 @@ const plans = {
         amount: 24999
     }
 };
+
+// Kept in memory for this small starter project. Use a database in production.
+const pendingOrders = new Map();
 
 
 // ===============================
@@ -78,6 +84,8 @@ app.post("/create-order", async (req, res) => {
         const order =
             await razorpay.orders.create(options);
 
+        pendingOrders.set(order.id, plan);
+
 
         res.json({
             success: true,
@@ -98,7 +106,7 @@ app.post("/create-order", async (req, res) => {
 
     catch (error) {
 
-        console.error(error);
+        console.error("Unable to create payment order:", error.message);
 
         res.status(500).json({
             success: false,
@@ -124,6 +132,15 @@ app.post("/verify-payment", async (req, res) => {
             razorpay_signature
         } = req.body;
 
+        const plan = pendingOrders.get(razorpay_order_id);
+
+        if (!plan || !razorpay_payment_id || !razorpay_signature) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid payment details"
+            });
+        }
+
 
         const body =
             razorpay_order_id +
@@ -141,11 +158,10 @@ app.post("/verify-payment", async (req, res) => {
                 .digest("hex");
 
 
-        const isValid =
-            crypto.timingSafeEqual(
-                Buffer.from(expectedSignature),
-                Buffer.from(razorpay_signature)
-            );
+        const expectedBuffer = Buffer.from(expectedSignature, "utf8");
+        const receivedBuffer = Buffer.from(razorpay_signature, "utf8");
+        const isValid = expectedBuffer.length === receivedBuffer.length &&
+            crypto.timingSafeEqual(expectedBuffer, receivedBuffer);
 
 
         if (!isValid) {
@@ -158,23 +174,22 @@ app.post("/verify-payment", async (req, res) => {
         }
 
 
-        // Payment is genuine
-        // You can save payment details
-        // to MongoDB here.
+        // Payment is genuine. Save the payment details to a database here in production.
+        pendingOrders.delete(razorpay_order_id);
 
 
         res.json({
             success: true,
             message: "Payment verified successfully",
 
-            redirect: "/dashboard.html"
+            redirect: "./dashboard.html"
         });
 
     }
 
     catch (error) {
 
-        console.error(error);
+        console.error("Payment verification error:", error.message);
 
         res.status(500).json({
             success: false,
@@ -186,18 +201,13 @@ app.post("/verify-payment", async (req, res) => {
 });
 
 
+app.use(express.static(publicPath));
+
 // ===============================
 // START SERVER
 // ===============================
-
-const PORT =
-    process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-
-    console.log(
-        `V² Digital Agency running on http://localhost:${PORT}`
-    );
-
+    console.log(`V² Digital Agency running on http://localhost:${PORT}`);
 });
