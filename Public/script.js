@@ -184,6 +184,42 @@ document.querySelectorAll("[data-plan]").forEach((button) => {
     button.addEventListener("click", () => startPayment(button.dataset.plan));
 });
 
+const loginModal = document.getElementById("loginModal");
+const loginForm = document.getElementById("loginForm");
+const loginEmail = document.getElementById("loginEmail");
+const loginStatus = document.getElementById("loginStatus");
+
+function openLogin() {
+    loginModal.classList.add("is-open");
+    loginModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    loginStatus.textContent = "";
+    window.setTimeout(() => loginEmail.focus(), 50);
+}
+
+function closeLogin() {
+    loginModal.classList.remove("is-open");
+    loginModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+}
+
+document.querySelectorAll("[data-login-trigger]").forEach((button) => {
+    button.addEventListener("click", openLogin);
+});
+
+document.querySelectorAll("[data-login-close]").forEach((button) => {
+    button.addEventListener("click", closeLogin);
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && loginModal.classList.contains("is-open")) closeLogin();
+});
+
+loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    loginStatus.textContent = "Client login is ready to connect to your backend.";
+});
+
 // Service cards share one details panel, keeping users on this page.
 const serviceDetails = {
     reels: {

@@ -157,6 +157,8 @@
             <div class="hidden sm:flex items-center gap-3">
 
                 <button
+                    type="button"
+                    data-login-trigger
                     class="px-5 py-2.5 rounded-full
                     border border-slate-200
                     text-slate-700 text-sm
@@ -270,6 +272,8 @@
             >
 
                 <button
+                    type="button"
+                    data-login-trigger
                     class="w-full py-2.5 rounded-full
                     border border-slate-200
                     text-slate-700 text-sm
@@ -1772,6 +1776,50 @@
             <button id="sendButton">➤</button>
         </div>
 
+    </div>
+
+
+    <!-- ================= CLIENT LOGIN ================= -->
+
+    <div
+        class="login-modal"
+        id="loginModal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="login-title"
+    >
+        <div class="login-modal-backdrop" data-login-close></div>
+
+        <div class="login-panel" role="document">
+            <button
+                type="button"
+                class="login-close"
+                id="closeLogin"
+                data-login-close
+                aria-label="Close client login"
+            >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <div class="login-panel-heading">
+                <span class="login-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></span>
+                <p class="login-kicker">CLIENT PORTAL</p>
+                <h2 id="login-title">Welcome back</h2>
+                <p>Sign in to view your projects, payments, and updates.</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <label for="loginEmail">Email address</label>
+                <input type="email" id="loginEmail" name="email" placeholder="you@example.com" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="login-submit">Log in</button>
+                <p class="login-status" id="loginStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
     </div>
 
 

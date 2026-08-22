@@ -53,6 +53,160 @@ body {
     background: white;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
+.login-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease, visibility .2s ease;
+}
+
+.login-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.login-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 28, 50, .62);
+}
+
+.login-panel {
+    position: relative;
+    width: min(100%, 430px);
+    padding: 2.25rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(17, 28, 50, .2);
+    transform: translateY(12px) scale(.98);
+    transition: transform .2s ease;
+}
+
+.login-modal.is-open .login-panel {
+    transform: translateY(0) scale(1);
+}
+
+.login-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.login-close:hover {
+    background: #e2e8f0;
+    color: var(--text);
+}
+
+.login-panel-heading {
+    text-align: center;
+}
+
+.login-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    border-radius: 14px;
+    background: var(--light-blue);
+    color: var(--blue);
+}
+
+.login-kicker {
+    margin-bottom: .35rem;
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.login-panel h2 {
+    margin-bottom: .45rem;
+    color: var(--dark);
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.login-panel-heading > p:last-child {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.login-form {
+    display: grid;
+    gap: .55rem;
+    margin-top: 1.75rem;
+}
+
+.login-form label {
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.login-form input {
+    width: 100%;
+    height: 44px;
+    padding: 0 .85rem;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.login-form input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(36, 99, 235, .12);
+}
+
+.login-submit {
+    height: 44px;
+    margin-top: .65rem;
+    border: 0;
+    border-radius: 7px;
+    background: var(--blue);
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.login-submit:hover {
+    background: #1553d4;
+}
+
+.login-status {
+    min-height: 18px;
+    color: #12a98d;
+    font-size: 11px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .login-panel {
+        padding: 2rem 1.35rem 1.5rem;
+    }
+}
+
 
 /* ================= COMMON ================= */
 
